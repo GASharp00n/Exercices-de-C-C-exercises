@@ -1,0 +1,12 @@
+# E89 Pedagogical & Technical Lab
+# project: justfile
+# created on:  2026-02-03 - 16:53 +0100
+# 1st author:  sacha.juillard
+# description: aliases for compilator
+
+build_lib:
+    gcc -c src/*.c
+    ar rc libstu.a *.o
+test:
+    gcc -Iinclude src/*.c test/*.c -lcriterion -o unit_test.out
+    ./unit_test.out
